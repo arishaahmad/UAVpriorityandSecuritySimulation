@@ -1,0 +1,293 @@
+version 3
+run PriorityTest-0-20251214-13:59:38-340264
+attr configname PriorityTest
+attr datetime 20251214-13:59:38
+attr datetimef 20251214-135938
+attr experiment PriorityTest
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network simulations.UAVGroundStationNetwork
+attr processid 340264
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config description "Test priority queue behavior"
+config **.uav1.missionType "\"surveillance\""
+config **.uav2.missionType "\"delivery\""
+config **.uav3.missionType "\"emergency\""
+config **.groundStation.processingDelay 1s
+config network simulations.UAVGroundStationNetwork
+config sim-time-limit 50s
+config seed-set 0
+config repeat 5
+config **.uav*.ackTimeout 2s
+config **.uav*.maxRetries 3
+config **.uav*.transmitPower 100mW
+config **.uav*.xVelocity 2.0
+config **.uav*.yVelocity 2.0
+config **.uav*.moveInterval 0.1
+config **.uav*.encryptionKey "\"simkey\""
+config **.groundStation.queueCapacity 50
+config **.groundStation.processingDelay 0.1s
+config **.groundStation.encryptionKey "\"simkey\""
+config **.channel*.datarate 1Mbps
+config **.channel*.ber 1e-6
+config **.scalar-recording true
+config **.vector-recording true
+config **.uav*.messagesSent.statistic-recording true
+config **.uav*.messagesReceived.statistic-recording true
+config **.uav*.retransmissions.statistic-recording true
+config **.uav*.timeouts.statistic-recording true
+config **.groundStation.queueLength.statistic-recording true
+config **.groundStation.messagesProcessed.statistic-recording true
+config **.groundStation.messagesDropped.statistic-recording true
+config **.groundStation.processingDelay.statistic-recording true
+config output-vector-file results/PriorityTest-0.vec
+config output-scalar-file results/PriorityTest-0.sca
+
+par UAVGroundStationNetwork.uav1.wireless$o.channel typename "\"simulations.WirelessChannel\""
+par UAVGroundStationNetwork.uav1.wireless$o.channel disabled false
+attr mutable ""
+par UAVGroundStationNetwork.uav1.wireless$o.channel delay 1e-06s
+attr mutable ""
+attr unit s
+par UAVGroundStationNetwork.uav1.wireless$o.channel datarate 1e+06bps
+attr mutable ""
+attr unit bps
+par UAVGroundStationNetwork.uav1.wireless$o.channel ber 1e-06
+attr mutable ""
+par UAVGroundStationNetwork.uav1.wireless$o.channel per 0
+attr mutable ""
+par UAVGroundStationNetwork.groundStation.wireless$o[0].channel typename "\"simulations.WirelessChannel\""
+par UAVGroundStationNetwork.groundStation.wireless$o[0].channel disabled false
+attr mutable ""
+par UAVGroundStationNetwork.groundStation.wireless$o[0].channel delay 1e-06s
+attr mutable ""
+attr unit s
+par UAVGroundStationNetwork.groundStation.wireless$o[0].channel datarate 1e+06bps
+attr mutable ""
+attr unit bps
+par UAVGroundStationNetwork.groundStation.wireless$o[0].channel ber 1e-06
+attr mutable ""
+par UAVGroundStationNetwork.groundStation.wireless$o[0].channel per 0
+attr mutable ""
+par UAVGroundStationNetwork.uav2.wireless$o.channel typename "\"simulations.WirelessChannel\""
+par UAVGroundStationNetwork.uav2.wireless$o.channel disabled false
+attr mutable ""
+par UAVGroundStationNetwork.uav2.wireless$o.channel delay 1e-06s
+attr mutable ""
+attr unit s
+par UAVGroundStationNetwork.uav2.wireless$o.channel datarate 1e+06bps
+attr mutable ""
+attr unit bps
+par UAVGroundStationNetwork.uav2.wireless$o.channel ber 1e-06
+attr mutable ""
+par UAVGroundStationNetwork.uav2.wireless$o.channel per 0
+attr mutable ""
+par UAVGroundStationNetwork.groundStation.wireless$o[1].channel typename "\"simulations.WirelessChannel\""
+par UAVGroundStationNetwork.groundStation.wireless$o[1].channel disabled false
+attr mutable ""
+par UAVGroundStationNetwork.groundStation.wireless$o[1].channel delay 1e-06s
+attr mutable ""
+attr unit s
+par UAVGroundStationNetwork.groundStation.wireless$o[1].channel datarate 1e+06bps
+attr mutable ""
+attr unit bps
+par UAVGroundStationNetwork.groundStation.wireless$o[1].channel ber 1e-06
+attr mutable ""
+par UAVGroundStationNetwork.groundStation.wireless$o[1].channel per 0
+attr mutable ""
+par UAVGroundStationNetwork.uav3.wireless$o.channel typename "\"simulations.WirelessChannel\""
+par UAVGroundStationNetwork.uav3.wireless$o.channel disabled false
+attr mutable ""
+par UAVGroundStationNetwork.uav3.wireless$o.channel delay 1e-06s
+attr mutable ""
+attr unit s
+par UAVGroundStationNetwork.uav3.wireless$o.channel datarate 1e+06bps
+attr mutable ""
+attr unit bps
+par UAVGroundStationNetwork.uav3.wireless$o.channel ber 1e-06
+attr mutable ""
+par UAVGroundStationNetwork.uav3.wireless$o.channel per 0
+attr mutable ""
+par UAVGroundStationNetwork.groundStation.wireless$o[2].channel typename "\"simulations.WirelessChannel\""
+par UAVGroundStationNetwork.groundStation.wireless$o[2].channel disabled false
+attr mutable ""
+par UAVGroundStationNetwork.groundStation.wireless$o[2].channel delay 1e-06s
+attr mutable ""
+attr unit s
+par UAVGroundStationNetwork.groundStation.wireless$o[2].channel datarate 1e+06bps
+attr mutable ""
+attr unit bps
+par UAVGroundStationNetwork.groundStation.wireless$o[2].channel ber 1e-06
+attr mutable ""
+par UAVGroundStationNetwork.groundStation.wireless$o[2].channel per 0
+attr mutable ""
+par UAVGroundStationNetwork.uav1 typename "\"simulations.UAV\""
+par UAVGroundStationNetwork.uav1 uavId 1
+par UAVGroundStationNetwork.uav1 missionType "\"surveillance\""
+par UAVGroundStationNetwork.uav1 xPos 100m
+attr unit m
+par UAVGroundStationNetwork.uav1 yPos 100m
+attr unit m
+par UAVGroundStationNetwork.uav1 zPos 50m
+attr unit m
+par UAVGroundStationNetwork.uav1 xVelocity 2
+par UAVGroundStationNetwork.uav1 yVelocity 2
+par UAVGroundStationNetwork.uav1 moveInterval 0.1
+par UAVGroundStationNetwork.uav1 encryptionKey "\"simkey\""
+par UAVGroundStationNetwork.uav1 transmitPower 100mW
+attr unit mW
+par UAVGroundStationNetwork.uav1 ackTimeout 2s
+attr unit s
+par UAVGroundStationNetwork.uav1 maxRetries 3
+scalar UAVGroundStationNetwork.uav1 timeouts:count 0
+attr recordingmode count
+scalar UAVGroundStationNetwork.uav1 timeouts:sum 0
+attr recordingmode sum
+scalar UAVGroundStationNetwork.uav1 timeouts:mean -nan
+attr recordingmode mean
+scalar UAVGroundStationNetwork.uav1 retransmissions:count 0
+attr recordingmode count
+scalar UAVGroundStationNetwork.uav1 retransmissions:sum 0
+attr recordingmode sum
+scalar UAVGroundStationNetwork.uav1 retransmissions:mean -nan
+attr recordingmode mean
+scalar UAVGroundStationNetwork.uav1 messagesReceived:count 0
+attr recordingmode count
+scalar UAVGroundStationNetwork.uav1 messagesReceived:sum 0
+attr recordingmode sum
+scalar UAVGroundStationNetwork.uav1 messagesReceived:mean -nan
+attr recordingmode mean
+scalar UAVGroundStationNetwork.uav1 messagesSent:count 14
+attr recordingmode count
+scalar UAVGroundStationNetwork.uav1 messagesSent:sum 14
+attr recordingmode sum
+scalar UAVGroundStationNetwork.uav1 messagesSent:mean 1
+attr recordingmode mean
+par UAVGroundStationNetwork.uav2 typename "\"simulations.UAV\""
+par UAVGroundStationNetwork.uav2 uavId 2
+par UAVGroundStationNetwork.uav2 missionType "\"delivery\""
+par UAVGroundStationNetwork.uav2 xPos 200m
+attr unit m
+par UAVGroundStationNetwork.uav2 yPos 150m
+attr unit m
+par UAVGroundStationNetwork.uav2 zPos 75m
+attr unit m
+par UAVGroundStationNetwork.uav2 xVelocity 2
+par UAVGroundStationNetwork.uav2 yVelocity 2
+par UAVGroundStationNetwork.uav2 moveInterval 0.1
+par UAVGroundStationNetwork.uav2 encryptionKey "\"simkey\""
+par UAVGroundStationNetwork.uav2 transmitPower 100mW
+attr unit mW
+par UAVGroundStationNetwork.uav2 ackTimeout 2s
+attr unit s
+par UAVGroundStationNetwork.uav2 maxRetries 3
+scalar UAVGroundStationNetwork.uav2 timeouts:count 0
+attr recordingmode count
+scalar UAVGroundStationNetwork.uav2 timeouts:sum 0
+attr recordingmode sum
+scalar UAVGroundStationNetwork.uav2 timeouts:mean -nan
+attr recordingmode mean
+scalar UAVGroundStationNetwork.uav2 retransmissions:count 0
+attr recordingmode count
+scalar UAVGroundStationNetwork.uav2 retransmissions:sum 0
+attr recordingmode sum
+scalar UAVGroundStationNetwork.uav2 retransmissions:mean -nan
+attr recordingmode mean
+scalar UAVGroundStationNetwork.uav2 messagesReceived:count 0
+attr recordingmode count
+scalar UAVGroundStationNetwork.uav2 messagesReceived:sum 0
+attr recordingmode sum
+scalar UAVGroundStationNetwork.uav2 messagesReceived:mean -nan
+attr recordingmode mean
+scalar UAVGroundStationNetwork.uav2 messagesSent:count 13
+attr recordingmode count
+scalar UAVGroundStationNetwork.uav2 messagesSent:sum 13
+attr recordingmode sum
+scalar UAVGroundStationNetwork.uav2 messagesSent:mean 1
+attr recordingmode mean
+par UAVGroundStationNetwork.uav3 typename "\"simulations.UAV\""
+par UAVGroundStationNetwork.uav3 uavId 3
+par UAVGroundStationNetwork.uav3 missionType "\"emergency\""
+par UAVGroundStationNetwork.uav3 xPos 150m
+attr unit m
+par UAVGroundStationNetwork.uav3 yPos 200m
+attr unit m
+par UAVGroundStationNetwork.uav3 zPos 60m
+attr unit m
+par UAVGroundStationNetwork.uav3 xVelocity 2
+par UAVGroundStationNetwork.uav3 yVelocity 2
+par UAVGroundStationNetwork.uav3 moveInterval 0.1
+par UAVGroundStationNetwork.uav3 encryptionKey "\"simkey\""
+par UAVGroundStationNetwork.uav3 transmitPower 100mW
+attr unit mW
+par UAVGroundStationNetwork.uav3 ackTimeout 2s
+attr unit s
+par UAVGroundStationNetwork.uav3 maxRetries 3
+scalar UAVGroundStationNetwork.uav3 timeouts:count 1
+attr recordingmode count
+scalar UAVGroundStationNetwork.uav3 timeouts:sum 1
+attr recordingmode sum
+scalar UAVGroundStationNetwork.uav3 timeouts:mean 1
+attr recordingmode mean
+scalar UAVGroundStationNetwork.uav3 retransmissions:count 1
+attr recordingmode count
+scalar UAVGroundStationNetwork.uav3 retransmissions:sum 1
+attr recordingmode sum
+scalar UAVGroundStationNetwork.uav3 retransmissions:mean 1
+attr recordingmode mean
+scalar UAVGroundStationNetwork.uav3 messagesReceived:count 0
+attr recordingmode count
+scalar UAVGroundStationNetwork.uav3 messagesReceived:sum 0
+attr recordingmode sum
+scalar UAVGroundStationNetwork.uav3 messagesReceived:mean -nan
+attr recordingmode mean
+scalar UAVGroundStationNetwork.uav3 messagesSent:count 15
+attr recordingmode count
+scalar UAVGroundStationNetwork.uav3 messagesSent:sum 15
+attr recordingmode sum
+scalar UAVGroundStationNetwork.uav3 messagesSent:mean 1
+attr recordingmode mean
+par UAVGroundStationNetwork.groundStation typename "\"simulations.GroundStation\""
+par UAVGroundStationNetwork.groundStation xPos 0m
+attr unit m
+par UAVGroundStationNetwork.groundStation yPos 0m
+attr unit m
+par UAVGroundStationNetwork.groundStation zPos 0m
+attr unit m
+par UAVGroundStationNetwork.groundStation queueCapacity 50
+par UAVGroundStationNetwork.groundStation processingDelay 1s
+attr unit s
+par UAVGroundStationNetwork.groundStation encryptionKey "\"simkey\""
+scalar UAVGroundStationNetwork.groundStation processingDelay:count 42
+attr recordingmode count
+scalar UAVGroundStationNetwork.groundStation processingDelay:mean 1
+attr recordingmode mean
+scalar UAVGroundStationNetwork.groundStation processingDelay:max 1
+attr recordingmode max
+scalar UAVGroundStationNetwork.groundStation processingDelay:min 1
+attr recordingmode min
+scalar UAVGroundStationNetwork.groundStation messagesDropped:count 0
+attr recordingmode count
+scalar UAVGroundStationNetwork.groundStation messagesDropped:sum 0
+attr recordingmode sum
+scalar UAVGroundStationNetwork.groundStation messagesProcessed:count 42
+attr recordingmode count
+scalar UAVGroundStationNetwork.groundStation messagesProcessed:sum 42
+attr recordingmode sum
+scalar UAVGroundStationNetwork.groundStation queueLength:count 85
+attr recordingmode count
+scalar UAVGroundStationNetwork.groundStation queueLength:mean 0.69411764705882
+attr recordingmode mean
+scalar UAVGroundStationNetwork.groundStation queueLength:max 2
+attr recordingmode max
+scalar UAVGroundStationNetwork.groundStation queueLength:min 0
+attr recordingmode min
+par UAVGroundStationNetwork typename "\"simulations.UAVGroundStationNetwork\""
+
